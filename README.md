@@ -20,7 +20,7 @@ table.mainloop
 * **W** to turn UP
 * **S** to turn DOWN
 * **A** to turn LEFT
-* **D** to turn write
+* **D** to turn RIGHT
 
 
 Thanks for visit this shit :heart:
