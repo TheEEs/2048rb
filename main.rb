@@ -56,6 +56,7 @@ class Table
    end #end case
    __add  rows
    rows.each do |row|
+=begin
      (1...row.length).each {|x|
        pivot = row[x]
        (0...x).to_a.reverse.each {|y|
@@ -65,6 +66,10 @@ class Table
          end if row[y].nil?
        }
      }
+=end
+    compact = row.compact
+    row[0...row.length] = *([nil] * @size)
+    row[0...compact.length] = *compact
    end #end _ block
 
   if direction == Direction::RIGHT then rows = rows.map { |arr| arr.reverse  }
@@ -143,7 +148,7 @@ private
     }
     return if blanks.count == 0
     rand_index = rand blanks.count
-    @table[blanks[rand_index]] =  rand >= 0.763 ? 4 : 2
+    @table[blanks[rand_index]] =  rand >= 0.5 ? 4 : 2
   end
 
   def __add rows
