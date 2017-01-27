@@ -1,6 +1,6 @@
 # 2048rb - A terminal version of 2048 game
 
-This is a clone of a Python program which was wrote by [Manh Duc Nguyen](https://github.com/manhdcnguyen).
+This is a clone of a Python program which was written by [Manh Duc Nguyen](https://github.com/manhdcnguyen).
 
 I rewrite this program in Ruby just because I want to improve my coding skill , this project is just for fun.
 
