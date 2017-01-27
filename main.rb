@@ -143,16 +143,20 @@ private
     }
     return if blanks.count == 0
     rand_index = rand blanks.count
-    @table[blanks[rand_index]] =  (rand >= 0.5 ? 4 : 2)
+    @table[blanks[rand_index]] =  rand >= 0.763 ? 4 : 2
   end
 
   def __add rows
     rows.each do |row|
       (0...row.length - 1).each do |index|
         next if row[index].nil?
-        row[index] *= 2 if row[index] == row[index +1]
+        (row[index] *= 2
+        row[index+1] = nil
+        ) if row[index] == row[index +1]
       end #end block
     end #end loop
   end
 
 end
+table = Table.new 5
+table.mainloop
