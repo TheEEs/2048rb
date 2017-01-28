@@ -20,8 +20,9 @@ class Table
   def initialize size
     @size = size
     @table = [nil] * size * size
-    _gen_rnd
-    self.move Direction::DOWN
+    _gen_rnd;system'clear'
+    draw
+    #self.move Direction::DOWN
   end #end_new
 
   def mainloop
@@ -56,17 +57,6 @@ class Table
    end #end case
    __add  rows
    rows.each do |row|
-=begin
-     (1...row.length).each {|x|
-       pivot = row[x]
-       (0...x).to_a.reverse.each {|y|
-         begin
-           row[y] = pivot
-           row[y+1] = nil
-         end if row[y].nil?
-       }
-     }
-=end
     compact = row.compact
     row[0...row.length] = *([nil] * @size)
     row[0...compact.length] = *compact
