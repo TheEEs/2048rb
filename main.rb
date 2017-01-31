@@ -119,12 +119,12 @@ private
     rows = self.rows
     cols = self.cols
     rows.each { |row|
-      0.upto row.length-1 {|i|
+      0.upto (row.length-2) {|i|
         losed_row = false if row[i] == row[i+1] or !(row[i] && row[i+1])
       }
     }
     cols.each {|col|
-      0.upto col.length-1 {|i|
+      0.upto (col.length-2) {|i|
         losed_col = false if (col[i] == col[i+1]) or !(col[i] && col[i+1])
       }
     }
